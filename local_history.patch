@@ -1,0 +1,42 @@
+Index: conditionals.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/conditionals.php b/conditionals.php
+--- a/conditionals.php	
++++ b/conditionals.php	(date 1665574008039)
+@@ -10,16 +10,21 @@
+ <body>
+ <?php
+ $losowa=rand(1,30);?>
+-
+-<h2 style="text-align: center; color: darkorchid;"> <?php echo ($losowa) ?> </h2>
+-<h4 style="text-align: center; color: magenta;">
+-<?php
+-if ($losowa >= 20)
+-echo 'Wylosowana liczba jest większa lub równa 20';
+-?>
+-</h4>
+-
+-
+-
++<h2 style="text-align: center; color: darkorchid;"><?=$losowa?></h2>
++<?php if ($losowa >= 20) : ?>
++    <h4 style="text-align: center;color: magenta;">Wylosowana liczba jest większa lub równa 20.</h4>
++<?php endif; ?>
++<?php if ($losowa % 2 == 0) : ?>
++    <h4 style="text-align: center; color: navy;">Liczba jest parzysta</h4>
++<?php else : ?>
++    <h4 style="text-align: center; color: navy;">Liczba nie jest parzysta</h4>
++<?php endif; ?>
++<?php if ($losowa <= 10 ) : ?>
++    <h4 style="color: deeppink; text-align: center;">Pierwsza dziesiątka</h4>
++<?php elseif ($losowa > 10 && $losowa <= 20) : ?>
++    <h4 style="color: deeppink; text-align: center;">Druga dziesiątka</h4>
++<?php else : ?>
++    <h4 style="color: deeppink; text-align: center;">Trzecia dziesiątka</h4>
++<?php endif; ?>
+ </body>
+ </html>
+\ No newline at end of file

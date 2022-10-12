@@ -1,0 +1,17 @@
+Index: conditionals.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/conditionals.php b/conditionals.php
+--- a/conditionals.php	(revision 169ca0a15fef2ceff3bb677a8d0a9da6730b18e5)
++++ b/conditionals.php	(revision 061411739c87aeb39f2c3c984fbe1b161025b084)
+@@ -26,5 +26,7 @@
+ <?php else : ?>
+     <h4 style="color: deeppink; text-align: center;">Trzecia dziesiątka</h4>
+ <?php endif; ?>
++
++
+ </body>
+ </html>
+\ No newline at end of file
