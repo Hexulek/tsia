@@ -4,6 +4,7 @@
 
 </head>
 <body>
+<h1> Zadanie 2</h1>
 
 <form action="#">
     <fieldset>
@@ -34,12 +35,13 @@ $tablica=array(
         12=> "Grudzień"
 )
     ?>
+<h1> Zadanie 3</h1>
 <form>
     <select name="months" id="months">
         <?php
         foreach ($tablica as $month => $month_name) {
             if ($month == date ("m")) {
-                echo "<option selected value='$month_name'>$month_name"
+                echo "<option selected value='$month_name'>$month_name";
             }
         }
         ?>
