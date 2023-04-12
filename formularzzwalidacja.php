@@ -51,6 +51,7 @@
 
 
         /*
+
             if($_SERVER['REQUEST_METHOD']=='POST') {
             if (empty($_POST['nazwisko'])) {
                 $nazwisko_blad = "Proszę podać email";
@@ -67,6 +68,7 @@
                 $strona = $_POST['strona'];
             }
         }
+
         */
 
 
