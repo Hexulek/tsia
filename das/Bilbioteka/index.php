@@ -38,7 +38,7 @@
     <div class="column1" style="background-color: lightblue;">
         <ul>
             <a href="index.php">Strona główna</a><br>
-            <a href="#">Test połączenia</a><br>
+            <a href="?page=test">Test połączenia</a><br>
             <a href="#">Lista tabel</a><br>
             <a href="?page=czytelnicy">Tabela czytelnicy</a><br>
             <a href="?page=dzialy">Tabela działy</a><br>
