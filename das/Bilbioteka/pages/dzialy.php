@@ -1,13 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
 <h1>Tabela działy</h1>
-</body>
-</html>
+
+<div class="column2">
+    <?php
+    $query = 'SELECT * FROM dzialy';
+    $result = mysqli_query($conn, $query);
+    echo '<p>Zawiera ' . mysqli_num_rows($result) . ' wierszy</p>';
+    if (mysqli_num_rows($result) > 0) {
+        echo '<table>';
+        echo '<tr><th>Id_dzial</th><th>Nazwa</th><th><a class="add" href="?page=dzialy_dodaj">&#10010;</a></th></tr>';
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<tr><td>' . $row['Id_dzial'] . '</td><td>'
+                . $row['Nazwa'] . '</td><td>' . '</td></tr>';
+        }
+        echo '</table>';
+    } else {
+        echo 'brak danych';
+    }
+    ?>
+</div>

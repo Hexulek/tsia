@@ -1,13 +1,36 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
 <h1>Tabela pracownicy</h1>
-</body>
-</html>
+
+
+<?php
+$servername = "127.0.0.1";
+$username = "StyczenMateusz";
+$password = "Mateuszs221";
+$database = "StyczenMateusz";
+$conn = mysqli_connect($servername, $username, $password, $database);
+if (!$conn)
+{
+    die('Próba połączenia z bazą danych zakończyła się niepowodzeniem. Błąd: '
+        . mysqli_connect_error());
+}
+?>
+<div class="column2">
+
+
+
+    <?php
+    $query = 'SELECT * FROM pracownicy JOIN stanowiska ON pracownicy.Id_stanowisko = stanowiska.Id_stanowisko';
+    $result = mysqli_query($conn, $query);
+    echo '<p>Zawiera ' . mysqli_num_rows($result) . ' wierszy</p>';
+    if (mysqli_num_rows($result) > 0) {
+        echo '<table>';
+        echo '<tr><th>ID Pracownika</th><th>Nazwisko</th><th>Imie</th><th>Stanowisko</th><th>Miasto</th><th>Data Zatrudnienia</th><th>Wynagrodzenie</th></tr>';
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<tr><td>' . $row['Id_pracownika'] . '</td><td>'
+                . $row['Nazwisko'] . '</td><td>' . $row['Imie'] . '</td><td>' . $row['Nazwa'] . '</td><td>' . $row['Miasto'] . '</td><td>' . $row['Data_zatrudnienia'] . '</td><td>' . $row['Wynagrodzenie'] . '</td></tr>';
+        }
+        echo '</table>';
+    } else {
+        echo 'brak danych';
+    }
+    ?>
+</div>
