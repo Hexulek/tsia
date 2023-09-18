@@ -2,23 +2,23 @@
 
 
 <?php
-$servername = "127.0.0.1";
-$username = "StyczenMateusz";
-$password = "Mateuszs221";
-$database = "StyczenMateusz";
-$conn = mysqli_connect($servername, $username, $password, $database);
-if (!$conn)
-{
-    die('Próba połączenia z bazą danych zakończyła się niepowodzeniem. Błąd: '
-        . mysqli_connect_error());
-}
+//$servername = "127.0.0.1";
+//$username = "StyczenMateusz";
+//$password = "Mateuszs221";
+//$database = "StyczenMateusz";
+//$conn = mysqli_connect($servername, $username, $password, $database);
+//if (!$conn)
+//{
+//    die('Próba połączenia z bazą danych zakończyła się niepowodzeniem. Błąd: '
+//        . mysqli_connect_error());
+//}
 ?>
 <div class="column2">
 
 
 
     <?php
-    $query = 'SELECT * FROM pracownicy JOIN stanowiska ON pracownicy.Id_stanowisko = stanowiska.Id_stanowisko';
+    $query = 'SELECT * FROM pracownicy JOIN stanowiska ON pracownicy.Id_stanowisko = stanowiska.Id_stanowisko ORDER BY Wynagrodzenie desc';
     $result = mysqli_query($conn, $query);
     echo '<p>Zawiera ' . mysqli_num_rows($result) . ' wierszy</p>';
     if (mysqli_num_rows($result) > 0) {

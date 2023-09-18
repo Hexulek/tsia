@@ -5,7 +5,7 @@
     $Nazwa = $_GET['Nazwa'];
 
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") // Zapisz dane z formularza do bazy [INSERT]
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
 
         $Nazwa = $_POST['Nazwa'];
