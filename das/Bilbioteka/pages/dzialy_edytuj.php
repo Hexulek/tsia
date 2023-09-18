@@ -1,35 +1,32 @@
 <h1>Edytuj dane tabeli dzialy</h1>
 <div class="column2">
     <?php
-    $id_dzial = $_GET['id'];
+    $Id_dzial = $_GET['id'];
+    $Nazwa = $_GET['Nazwa'];
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") // Zapisz dane z formularza do bazy [INSERT]
     {
 
         $Nazwa = $_POST['Nazwa'];
-        $query = "INSERT INTO dzialy (Nazwa) VALUES ('".$Nazwa."')";
-        echo $query;
+        $query = "UPDATE `dzialy` SET `Nazwa` = '".$Nazwa."' WHERE `dzialy`.`Id_dzial` = '$Id_dzial'";
+        $result = mysqli_query($conn, $query);
 
-        if (mysqli_query($conn, $query)) {
-            echo "New record created successfully";
+        if ($result) {
+            echo "Poprawnie zedytowałeś rekord";
+            echo '<br><a href="?page=dzialy">Wróć do strony TABELA DZIAŁY</a>';
         } else {
-            echo "Error: " . $query . "<br>" . mysqli_error($conn);
+            echo "Błąd edycji";
         }
 
     } else {
-
-
-        ?>
-        <form action="?page=dzialy_dodaj" method="post">
+        echo '<form action="?page=dzialy_edytuj&id='.$Id_dzial.'&Nazwa='.$Nazwa.'" method="post">
             <table>
-                <tr><td>Id_dzial</td><td><input type="text"</td></tr>
-                <tr><td>Nazwa</td><td><input type="text" name="Nazwa" ></td></tr>
-                <tr><td colspan="2"><center><button type="submit">Zapisz</button></center></td></tr>
+                <tr><td>Id_dzial</td><td><input type="text" name="Id_dzial" value="'.$Id_dzial.'" disabled </td></tr>
+                <tr><td>Nazwa</td><td><input type="text" name="Nazwa" id="Nazwa" value="'.$Nazwa.'"></td></tr>
+                <tr><td colspan="2"><center><button type="submit"/>Zapisz<button></center></td></tr>
             </table>
-        </form>
-        <?php
-    }
+        </form>';}
     ?>
 </div>
 
