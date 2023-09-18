@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") // Zapisz dane z formularza do bazy [I
        <form action="?page=dzialy_edytuj&id='.$Id_dzial.'&Nazwa='.$Nazwa.'" method="post">
             <table>
                 <tr><td>Id_dzial</td><td><input type="text" name="Id_dzial" value="'.$Id_dzial.'" disabled </td></tr>
-                <tr><td>Nazwa</td><td><input type="text" name="Nazwa" id="Nazwa" value="'.$Nazwa.'"></td></tr>
-                <tr><td colspan="2"><center><button type="submit"/>Zapisz<button></center></td></tr>
+                <tr><td>Nazwa</td><td><input type="text" name="Nazwa" id="Nazwa" value="'.$Nazwa.'" disabled></td></tr>
+                
             </table>
         </form>
     
